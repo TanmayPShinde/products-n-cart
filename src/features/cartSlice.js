@@ -16,7 +16,7 @@ export const cartSlice = createSlice({
       if (productItem) {
         productItem.quantity += 1;
       } else {
-        state.cartItems = [item, ...state.cartItems];
+        state.cartItems = [...state.cartItems, item];
       }
     },
     incrementQuant: (state, action) => {

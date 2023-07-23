@@ -53,11 +53,11 @@ const Cart = () => {
               <p>Sub Total:</p>
               <p>₹ {subTotal}</p>
             </div>
-            <div className="mx-2 my-2 flex justify-between">
+            <div className="mx-2 my-2 flex justify-between text-red-500">
               <p>Savings:</p>
               <p>₹ {savings}</p>
             </div>
-            <div className="mx-2 my-2 flex justify-between">
+            <div className="mx-2 my-2 flex justify-between font-medium">
               <p>Final Amount:</p>
               <p>₹ {amount}</p>
             </div>

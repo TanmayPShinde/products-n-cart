@@ -16,7 +16,7 @@ const CartItem = ({ item, itemsPricing, isSoupPresent }) => {
   return (
     <div className="flex justify-between mx-2 py-3">
       <div className="w-32">
-        <h2>{item.name}</h2>
+        <h2 className="text-lg font-medium">{item.name}</h2>
         {item.id === 1 && !isSoupPresent && (
           <p className="text-xs text-red-500 mt-1">
             <span
@@ -50,15 +50,19 @@ const CartItem = ({ item, itemsPricing, isSoupPresent }) => {
             +
           </button>
         </span>
-        <p>
+        <p className="text-sm text-gray-600 mt-1">
           Item price ₹ {item.price}*{item.quantity} = ₹{" "}
           {itemsPricing[item.id]?.itemPrice}
         </p>
         {itemsPricing[item.id]?.saving > 0 && (
-          <p>You saved ₹ {itemsPricing[item.id]?.saving}!</p>
+          <p className="text-base text-red-500">
+            You saved ₹ {itemsPricing[item.id]?.saving}
+          </p>
         )}
         {item.id === 3 && <p>{item.quantity} free cheese will be added!</p>}
-        <p>Item Cost: ₹ {itemsPricing[item.id]?.itemCost}!</p>
+        <p className="font-medium">
+          Item Cost: ₹ {itemsPricing[item.id]?.itemCost}
+        </p>
       </div>
     </div>
   );
