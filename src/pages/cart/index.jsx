@@ -30,8 +30,6 @@ const Cart = () => {
     };
   });
 
-  console.log(itemsPricing);
-
   return (
     <>
       <div className="mt-5 p-3 max-w-lg mx-auto bg-white rounded-md drop-shadow-lg">

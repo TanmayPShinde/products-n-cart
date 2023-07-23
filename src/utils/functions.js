@@ -26,6 +26,5 @@ export const check_for_offers = (item, itemPrice, isSoupPresent) => {
       saving = 0;
       break;
   }
-  console.log(saving);
   return saving;
 };

@@ -7,14 +7,14 @@ const initialState = {
       name: "Bread",
       price: 30,
       image:
-        "https://cdn.pixabay.com/photo/2016/11/20/08/33/camera-1842202__480.jpg",
+        "https://houseofnasheats.com/wp-content/uploads/2022/02/French-Bread-1.jpg",
     },
     {
       id: 2,
       name: "Milk",
       price: 50,
       image:
-        "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938__340.jpg",
+        "https://images.immediate.co.uk/production/volatile/sites/30/2020/02/Glass-and-bottle-of-milk-fe0997a.jpg?quality=70&resize=300,300",
     },
     {
       id: 3,
@@ -22,7 +22,7 @@ const initialState = {
       offer: "Buy 1 get 1 free!",
       price: 80,
       image:
-        "https://cdn.pixabay.com/photo/2019/06/30/18/19/tv-4308538__480.jpg",
+        "https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQgMUgf_R3eQVAHpU26GzPq8wqTC7_wVt16FVSS1dMQESbpe1F_7iUuTAmutUQmINDL",
     },
     {
       id: 4,
@@ -30,15 +30,15 @@ const initialState = {
       price: 60,
       offer: "Buy a soup and get Bread for half the price!",
       image:
-        "https://cdn.pixabay.com/photo/2017/08/11/14/19/honor-2631271__340.jpg",
+        "https://kristineskitchenblog.com/wp-content/uploads/2022/02/minestrone-soup-recipe-22.jpg",
     },
     {
       id: 5,
       name: "Butter",
       price: 99,
-      offer: "Get 1/3rd price off!",
+      offer: "Get 33% off!",
       image:
-        "https://cdn.pixabay.com/photo/2017/08/11/14/19/honor-2631271__340.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/%C5%A0v%C3%A9dsk%C3%BD_kol%C3%A1%C4%8D_naruby_904_%28cropped%29.JPG/600px-%C5%A0v%C3%A9dsk%C3%BD_kol%C3%A1%C4%8D_naruby_904_%28cropped%29.JPG",
     },
   ],
 };
