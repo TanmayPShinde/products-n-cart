@@ -35,8 +35,8 @@ const initialState = {
     {
       id: 5,
       name: "Butter",
-      price: 100,
-      offer: "Get 33% off!",
+      price: 99,
+      offer: "Get 1/3rd price off!",
       image:
         "https://cdn.pixabay.com/photo/2017/08/11/14/19/honor-2631271__340.jpg",
     },

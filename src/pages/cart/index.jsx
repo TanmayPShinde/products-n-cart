@@ -15,20 +15,27 @@ const Cart = () => {
   let savings = 0;
   let amount = 0;
   cartItems.forEach((item) => {
-    let item_price = item.price * item.quantity;
-    let saving = check_for_offers(item.id, isSoupPresent);
-    let item_cost = item_price - saving;
+    let itemPrice = item.price * item.quantity;
+    let saving = check_for_offers(item, itemPrice, isSoupPresent);
+    let itemCost = itemPrice - saving;
 
-    subTotal += item_price;
+    subTotal += itemPrice;
     savings += saving;
-    amount += item_cost;
+    amount += itemCost;
 
     itemsPricing[item.id] = {
-      item_price,
+      itemPrice,
       saving,
-      item_cost,
+      itemCost,
     };
   });
+
+  itemsPricing = {
+    ...itemsPricing,
+    subTotal,
+    savings,
+    amount,
+  };
 
   return (
     <>
@@ -37,10 +44,10 @@ const Cart = () => {
         <hr className="h-px mt-2 mb-3 bg-gray-200 border-2 dark:bg-gray-700" />
         {cartItems.length > 0 ? (
           cartItems.map((item) => (
-            <>
-              <CartItem item={item} key={item.id} />
+            <div key={item.id}>
+              <CartItem item={item} />
               <hr className="h-px my-0 bg-gray-200 border-1 dark:bg-gray-700" />
-            </>
+            </div>
           ))
         ) : (
           <p className="text-sm ">

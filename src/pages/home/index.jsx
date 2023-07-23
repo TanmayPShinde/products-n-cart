@@ -10,10 +10,10 @@ const Home = () => {
       <h1 className="text-2xl font-semibold ">Products</h1>
       <hr className="h-px mt-2 mb-3 bg-orange-600 border-2 dark:bg-gray-700" />
       {products.map((product) => (
-        <>
-          <Product product={product} key={product.id} />
+        <div key={product.id}>
+          <Product product={product} />
           <hr className="h-px my-0 bg-gray-200 border-1 dark:bg-gray-700" />
-        </>
+        </div>
       ))}
     </div>
   );
