@@ -26,7 +26,11 @@ const Product = ({ product }) => {
   return (
     <div className="flex justify-between py-3">
       <div className="ms-2 flex justify-center">
-        <img src={product.image} className="w-10 me-2 rounded-lg" />
+        <img
+          src={product.image}
+          alt="product"
+          className="w-10 me-2 rounded-lg"
+        />
         <span>
           <h2 className="font-medium">{product.name}</h2>
           {product.offer && (
