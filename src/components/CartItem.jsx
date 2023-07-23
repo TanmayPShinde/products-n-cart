@@ -55,11 +55,15 @@ const CartItem = ({ item, itemsPricing, isSoupPresent }) => {
           {itemsPricing[item.id]?.itemPrice}
         </p>
         {itemsPricing[item.id]?.saving > 0 && (
-          <p className="text-base text-red-500">
+          <p className="text-sm text-red-500">
             You saved ₹ {itemsPricing[item.id]?.saving}
           </p>
         )}
-        {item.id === 3 && <p>{item.quantity} free cheese will be added!</p>}
+        {item.id === 3 && (
+          <p className="text-sm text-red-500">
+            {item.quantity} free cheese will be added!
+          </p>
+        )}
         <p className="font-medium">
           Item Cost: ₹ {itemsPricing[item.id]?.itemCost}
         </p>
