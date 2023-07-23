@@ -6,11 +6,11 @@ const CartItem = ({ item }) => {
 
   return (
     <div className="flex justify-between py-3">
-      <div className="ms-2">
+      <div className="ms-2 w-20">
         <h2>{item.name}</h2>
       </div>
+      <span className="">₹ {item.price}</span>
       <div className="me-2">
-        <span className="me-4">₹ {item.price}</span>
         <span>
           <button
             onClick={() => dispatch(decrementQuant({ id: item.id }))}
@@ -28,6 +28,9 @@ const CartItem = ({ item }) => {
             +
           </button>
         </span>
+        <p>
+          Item price ₹{item.price} * {item.quantity} = ₹{}
+        </p>
       </div>
     </div>
   );
