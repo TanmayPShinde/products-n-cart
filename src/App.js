@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Cart from "./pages/cart";
 import NotFound from "./pages/notFound";
-import Footer from "./components/layout/footer";
+// import Footer from "./components/layout/footer";
 import Navbar from "./components/layout/navbar";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   );
