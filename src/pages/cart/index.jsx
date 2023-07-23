@@ -23,9 +23,11 @@ const Cart = () => {
         )}
       </div>
       <div className="text-center">
-        <button className="text-violet-500 font-medium rounded-sm !mt-5 py-1 px-2 text-xs bg-gray-200 hover:bg-violet-600 hover:text-white">
-          Go back
-        </button>
+        <Link to="/">
+          <button className="text-violet-500 font-medium rounded-sm !mt-5 py-1 px-2 text-xs bg-gray-200 hover:bg-violet-600 hover:text-white">
+            Go back
+          </button>
+        </Link>
       </div>
     </>
   );
