@@ -1,16 +1,16 @@
 import { useDispatch } from "react-redux";
 import { decrementQuant, incrementQuant } from "../features/cartSlice";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, itemsPricing }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex justify-between py-3">
-      <div className="ms-2 w-20">
+    <div className="flex justify-between mx-2 py-3">
+      <div className="w-20">
         <h2>{item.name}</h2>
       </div>
       <span className="">₹ {item.price}</span>
-      <div className="me-2">
+      <div>
         <span>
           <button
             onClick={() => dispatch(decrementQuant({ id: item.id }))}
@@ -29,8 +29,13 @@ const CartItem = ({ item }) => {
           </button>
         </span>
         <p>
-          Item price ₹{item.price} * {item.quantity} = ₹{}
+          Item price ₹ {item.price}*{item.quantity} = ₹{" "}
+          {itemsPricing[item.id]?.itemPrice}
         </p>
+        {itemsPricing[item.id]?.saving > 0 && (
+          <p>You saved ₹ {itemsPricing[item.id]?.saving}!</p>
+        )}
+        <p>Item Cost: ₹ {itemsPricing[item.id]?.itemCost}!</p>
       </div>
     </div>
   );

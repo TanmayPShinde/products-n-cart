@@ -30,12 +30,7 @@ const Cart = () => {
     };
   });
 
-  itemsPricing = {
-    ...itemsPricing,
-    subTotal,
-    savings,
-    amount,
-  };
+  console.log(itemsPricing);
 
   return (
     <>
@@ -43,12 +38,26 @@ const Cart = () => {
         <h1 className="text-2xl font-semibold ">Basket</h1>
         <hr className="h-px mt-2 mb-3 bg-gray-200 border-2 dark:bg-gray-700" />
         {cartItems.length > 0 ? (
-          cartItems.map((item) => (
-            <div key={item.id}>
-              <CartItem item={item} />
-              <hr className="h-px my-0 bg-gray-200 border-1 dark:bg-gray-700" />
+          <>
+            {cartItems.map((item) => (
+              <div key={item.id}>
+                <CartItem item={item} itemsPricing={itemsPricing} />
+                <hr className="h-px my-0 bg-gray-200 border-1 dark:bg-gray-700" />
+              </div>
+            ))}
+            <div className="mx-2 my-2 flex justify-between">
+              <p>Sub Total:</p>
+              <p>₹ {subTotal}</p>
             </div>
-          ))
+            <div className="mx-2 my-2 flex justify-between">
+              <p>Savings:</p>
+              <p>₹ {savings}</p>
+            </div>
+            <div className="mx-2 my-2 flex justify-between">
+              <p>Final Amount:</p>
+              <p>₹ {amount}</p>
+            </div>
+          </>
         ) : (
           <p className="text-sm ">
             Empty Cart,{" "}

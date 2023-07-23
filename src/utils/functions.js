@@ -13,14 +13,19 @@ export const check_for_offers = (item, itemPrice, isSoupPresent) => {
   // buy 1 get 1 free on cheese!
   // buy a soup and get bread for half the price!
   // get 1/3rd off on butter!
+  let saving = 0;
   switch (item.id) {
     case 1:
       // Bread
-      if (isSoupPresent) return itemPrice / 2;
+      if (isSoupPresent) saving = itemPrice / 2;
       break;
     case 5:
-      return itemPrice / 3;
+      saving = itemPrice / 3;
+      break;
     default:
-      return 0;
+      saving = 0;
+      break;
   }
+  console.log(saving);
+  return saving;
 };
