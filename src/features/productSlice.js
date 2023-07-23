@@ -19,6 +19,7 @@ const initialState = {
     {
       id: 3,
       name: "Cheese",
+      offer: "Buy 1 get 1 free!",
       price: 80,
       image:
         "https://cdn.pixabay.com/photo/2019/06/30/18/19/tv-4308538__480.jpg",
@@ -27,6 +28,7 @@ const initialState = {
       id: 4,
       name: "Soup",
       price: 60,
+      offer: "Buy a soup and get Bread for half the price!",
       image:
         "https://cdn.pixabay.com/photo/2017/08/11/14/19/honor-2631271__340.jpg",
     },
@@ -34,6 +36,7 @@ const initialState = {
       id: 5,
       name: "Butter",
       price: 100,
+      offer: "Get 33% off!",
       image:
         "https://cdn.pixabay.com/photo/2017/08/11/14/19/honor-2631271__340.jpg",
     },
