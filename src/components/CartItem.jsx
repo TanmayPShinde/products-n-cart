@@ -1,16 +1,24 @@
 import { useDispatch } from "react-redux";
 import { decrementQuant, incrementQuant } from "../features/cartSlice";
 
-const CartItem = ({ item, itemsPricing }) => {
+const CartItem = ({ item, itemsPricing, isSoupPresent }) => {
   const dispatch = useDispatch();
 
   return (
     <div className="flex justify-between mx-2 py-3">
-      <div className="w-20">
+      <div className="w-32">
         <h2>{item.name}</h2>
+        {item.id === 1 && !isSoupPresent && (
+          <p className="text-xs text-red-500 mt-1">
+            <span className="text-blue-500 hover:underline cursor-pointer">
+              Add a Soup
+            </span>{" "}
+            and avail 50% off on Bread
+          </p>
+        )}
       </div>
-      <span className="">₹ {item.price}</span>
-      <div>
+      <span>₹ {item.price}</span>
+      <div className="text-end">
         <span>
           <button
             onClick={() => dispatch(decrementQuant({ id: item.id }))}
@@ -35,6 +43,7 @@ const CartItem = ({ item, itemsPricing }) => {
         {itemsPricing[item.id]?.saving > 0 && (
           <p>You saved ₹ {itemsPricing[item.id]?.saving}!</p>
         )}
+        {item.id === 3 && <p>{item.quantity} free cheese will be added!</p>}
         <p>Item Cost: ₹ {itemsPricing[item.id]?.itemCost}!</p>
       </div>
     </div>

@@ -41,7 +41,11 @@ const Cart = () => {
           <>
             {cartItems.map((item) => (
               <div key={item.id}>
-                <CartItem item={item} itemsPricing={itemsPricing} />
+                <CartItem
+                  item={item}
+                  itemsPricing={itemsPricing}
+                  isSoupPresent={isSoupPresent}
+                />
                 <hr className="h-px my-0 bg-gray-200 border-1 dark:bg-gray-700" />
               </div>
             ))}
