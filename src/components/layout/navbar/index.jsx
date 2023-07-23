@@ -8,9 +8,11 @@ const Navbar = () => {
     <nav className="bg-gray-700">
       <div className="mx-4 max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-14 items-center justify-between">
-          <h1 className="text-white block px-2 py-2 text-base font-medium">
-            Product Cart
-          </h1>
+          <Link to="/">
+            <h1 className="text-white block px-2 py-2 text-base font-medium">
+              Tanmay's <span className="text-green-500">Product Cart</span>
+            </h1>
+          </Link>
 
           <Link to="/cart">
             <div className="px-2 py-1 sm:px-6 lg:px-8 text-white rounded-md hover:bg-slate-600">
