@@ -1,8 +1,17 @@
-import { useDispatch } from "react-redux";
-import { decrementQuant, incrementQuant } from "../features/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  decrementQuant,
+  incrementQuant,
+} from "../features/cartSlice";
 
 const CartItem = ({ item, itemsPricing, isSoupPresent }) => {
   const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.product);
+
+  const findSoup = () => {
+    return products.find((product) => product.id === 4);
+  };
 
   return (
     <div className="flex justify-between mx-2 py-3">
@@ -10,7 +19,12 @@ const CartItem = ({ item, itemsPricing, isSoupPresent }) => {
         <h2>{item.name}</h2>
         {item.id === 1 && !isSoupPresent && (
           <p className="text-xs text-red-500 mt-1">
-            <span className="text-blue-500 hover:underline cursor-pointer">
+            <span
+              onClick={() =>
+                dispatch(addToCart({ ...findSoup(), quantity: 1 }))
+              }
+              className="text-blue-500 hover:underline cursor-pointer"
+            >
               Add a Soup
             </span>{" "}
             and avail 50% off on Bread
