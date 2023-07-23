@@ -2,12 +2,13 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import CartItem from "../../components/CartItem";
+import { check_for_offers, check_for_soup } from "../../utils/functions";
 
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.cart);
   console.log("success");
 
-  const is_soup_present = check_for_soup(cartItems);
+  const isSoupPresent = check_for_soup(cartItems);
 
   let itemsPricing = {};
   let subTotal = 0;
@@ -15,7 +16,7 @@ const Cart = () => {
   let amount = 0;
   cartItems.forEach((item) => {
     let item_price = item.price * item.quantity;
-    let saving = check_for_offers(item.id, is_soup_present);
+    let saving = check_for_offers(item.id, isSoupPresent);
     let item_cost = item_price - saving;
 
     subTotal += item_price;
