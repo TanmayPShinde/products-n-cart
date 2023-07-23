@@ -25,25 +25,32 @@ const Product = ({ product }) => {
 
   return (
     <div className="flex justify-between py-3">
-      <div className="ms-2">
-        <h2>{product.name}</h2>
-        {product.offer && <p>{product.offer}</p>}
+      <div className="ms-2 flex justify-center">
+        <span>
+          <h2 className="font-medium">{product.name}</h2>
+          {product.offer && (
+            <h4 className="text-xs text-red-500 ">{product.offer}</h4>
+          )}
+        </span>
       </div>
       <div className="me-2">
         <span className="me-4">₹ {product.price}</span>
         {product.id in productsInCart ? (
           <span>
             <button
-              onClick={() => dispatch(incrementQuant({ id: product.id }))}
-            >
-              Up
-            </button>
-            <span>{productsInCart[product.id]}</span>
-
-            <button
               onClick={() => dispatch(decrementQuant({ id: product.id }))}
+              className="text-gray-100 font-medium rounded-sm h-6 w-6 text-xs bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
             >
-              Do
+              -
+            </button>
+            <div className="bg-gray-200 border-1 !h-6 w-8 px-2 inline-flex items-center justify-center text-sm font-medium">
+              {productsInCart[product.id]}
+            </div>
+            <button
+              onClick={() => dispatch(incrementQuant({ id: product.id }))}
+              className="text-gray-100 font-medium rounded-sm text-xs h-6 w-6 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+            >
+              +
             </button>
           </span>
         ) : (
