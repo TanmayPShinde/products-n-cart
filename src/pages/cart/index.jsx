@@ -1,11 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
 
 import CartItem from "../../components/CartItem";
 import { check_for_offers, check_for_soup } from "../../utils/functions";
+import { db } from "../../utils/firebase";
+import { emptyCart } from "../../features/cartSlice";
 
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   console.log("success");
 
   const isSoupPresent = check_for_soup(cartItems);
@@ -29,6 +33,24 @@ const Cart = () => {
       itemCost,
     };
   });
+
+  const uploadToFirebase = async () => {
+    console.log("first");
+    try {
+      const docRef = await addDoc(collection(db, "bills"), {
+        itemsPricing,
+        billAmount: {
+          subTotal,
+          savings,
+          amount,
+        },
+      });
+      console.log("Document written with ID: ", docRef.id);
+      dispatch(emptyCart());
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
 
   return (
     <>
@@ -65,6 +87,14 @@ const Cart = () => {
             <div className="mx-2 my-2 flex justify-between font-medium">
               <p>Final Amount:</p>
               <p>₹ {amount}</p>
+            </div>
+            <div className="mt-4 text-center">
+              <button
+                onClick={uploadToFirebase}
+                className="text-violet-500 font-medium rounded-sm py-2 px-3 text-xs bg-gray-200 hover:bg-violet-600 hover:text-white"
+              >
+                Add Bill To Firebase
+              </button>
             </div>
           </>
         ) : (
