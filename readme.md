@@ -28,17 +28,6 @@ and calculate the bill.
 <img width="1155" alt="image001" src="https://github.com/TanmayPShinde/products-n-cart/assets/62463484/cc7541b1-f61c-4dc6-b744-ead15d3d4d15">
 
 The implementation should use React and Redux (for state management).
-The coding should not only have the complete implementation but it
-should also represent coding best practices  
-
-Nice to haves
-    
-    1\. Unit tests
-    
-    2\. Saving to Firebase \\\> Firestore
-    
-    3\. Use Tailwind css for styling
-
  
 
 Sample screen \-- Please use your imagination to build the screen
