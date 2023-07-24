@@ -7,6 +7,7 @@ import {
   decrementQuant,
   removeFromCart,
 } from "../features/cartSlice";
+import PrimaryButton from "./shared/PrimaryButton";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -49,29 +50,30 @@ const Product = ({ product }) => {
             >
               ❌
             </button>
-            <button
-              onClick={() => dispatch(decrementQuant({ id: product.id }))}
-              className="text-gray-100 font-medium rounded-sm h-6 w-6 text-xs bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
-            >
-              ➖
-            </button>
+            <PrimaryButton
+              onClickHandler={() =>
+                dispatch(decrementQuant({ id: product.id }))
+              }
+              sx="text-xs h-6 w-6"
+              text="➖"
+            />
             <div className="bg-gray-200 border-1 !h-6 w-8 px-2 inline-flex items-center justify-center text-sm font-medium">
               {productsInCart[product.id]}
             </div>
-            <button
-              onClick={() => dispatch(incrementQuant({ id: product.id }))}
-              className="text-gray-100 font-medium rounded-sm text-xs h-6 w-6 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
-            >
-              ➕
-            </button>
+            <PrimaryButton
+              onClickHandler={() =>
+                dispatch(incrementQuant({ id: product.id }))
+              }
+              sx="text-xs h-6 w-6"
+              text="➕"
+            />
           </span>
         ) : (
-          <button
-            onClick={() => addProduct(product)}
-            className="text-gray-100 font-medium rounded-sm p-2.5 text-xs bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
-          >
-            Add
-          </button>
+          <PrimaryButton
+            onClickHandler={() => addProduct(product)}
+            text="Add"
+            sx="p-2.5"
+          />
         )}
       </div>
     </div>
