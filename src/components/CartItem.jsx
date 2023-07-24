@@ -7,12 +7,15 @@ import {
   removeFromCart,
 } from "../features/cartSlice";
 
-const CartItem = ({ item, itemsPricing, isSoupPresent }) => {
+const CartItem = ({ item, itemsPricing, isSoupPresent, isBreadPresent }) => {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.product);
 
   const findSoup = () => {
     return products.find((product) => product.id === 4);
+  };
+  const findBread = () => {
+    return products.find((product) => product.id === 1);
   };
 
   return (
@@ -30,6 +33,19 @@ const CartItem = ({ item, itemsPricing, isSoupPresent }) => {
               Add a Soup
             </span>{" "}
             and avail 50% off on Bread
+          </p>
+        )}
+        {item.id === 4 && !isBreadPresent && (
+          <p className="text-xs text-red-500 mt-1">
+            Get 50% off on Bread!{" "}
+            <span
+              onClick={() =>
+                dispatch(addToCart({ ...findBread(), quantity: 1 }))
+              }
+              className="text-blue-500 hover:underline cursor-pointer"
+            >
+              Add a Bread now
+            </span>{" "}
           </p>
         )}
       </div>

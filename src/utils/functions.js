@@ -8,6 +8,16 @@ export const check_for_soup = (cartItems) => {
   return false;
 };
 
+export const check_for_bread = (cartItems) => {
+  let i = 0;
+  const len = cartItems.length;
+  while (i < len) {
+    if (cartItems[i].id === 1) return true;
+    i++;
+  }
+  return false;
+};
+
 // returns the savings on an item if offer applicable
 export const check_for_offers = (item, itemPrice, isSoupPresent) => {
   // buy 1 get 1 free on cheese!

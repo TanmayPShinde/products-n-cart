@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 
 import CartItem from "../../components/CartItem";
-import { check_for_offers, check_for_soup } from "../../utils/functions";
+import {
+  check_for_bread,
+  check_for_offers,
+  check_for_soup,
+} from "../../utils/functions";
 import { db } from "../../utils/firebase";
 import { emptyCart } from "../../features/cartSlice";
 
@@ -13,6 +17,7 @@ const Cart = () => {
   console.log("success");
 
   const isSoupPresent = check_for_soup(cartItems);
+  const isBreadPresent = check_for_bread(cartItems);
 
   let itemsPricing = {};
   let subTotal = 0;
@@ -72,6 +77,7 @@ const Cart = () => {
                   item={item}
                   itemsPricing={itemsPricing}
                   isSoupPresent={isSoupPresent}
+                  isBreadPresent={isBreadPresent}
                 />
                 <hr className="h-px my-0 bg-gray-200 border-1 dark:bg-gray-700" />
               </div>
