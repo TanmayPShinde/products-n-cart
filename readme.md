@@ -1,9 +1,9 @@
 Remaining Things:
 
 
-    1. Firebase Setup and Saving To Firestore
-    2. Home page Products Layout styling
-    3. Suggestion to add bread when only cheese is added.
+    1. Firebase Setup and Saving To Firestore  -- done ✅
+    2. Home page Products Layout styling  -- done ✅
+    3. Suggestion to add bread when only cheese is added  -- done ✅
 
 
 
