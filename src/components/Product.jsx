@@ -5,6 +5,7 @@ import {
   addToCart,
   incrementQuant,
   decrementQuant,
+  removeFromCart,
 } from "../features/cartSlice";
 
 const Product = ({ product }) => {
@@ -43,10 +44,16 @@ const Product = ({ product }) => {
         {product.id in productsInCart ? (
           <span>
             <button
+              onClick={() => dispatch(removeFromCart({ id: product.id }))}
+              className="text-gray-100 font-medium rounded-sm h-6 w-6 me-2 text-xs bg-gray-400 hover:bg-red-400 active:bg-red-600 focus:outline-none focus:ring focus:ring-red-200"
+            >
+              ❌
+            </button>
+            <button
               onClick={() => dispatch(decrementQuant({ id: product.id }))}
               className="text-gray-100 font-medium rounded-sm h-6 w-6 text-xs bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
             >
-              -
+              ➖
             </button>
             <div className="bg-gray-200 border-1 !h-6 w-8 px-2 inline-flex items-center justify-center text-sm font-medium">
               {productsInCart[product.id]}
@@ -55,7 +62,7 @@ const Product = ({ product }) => {
               onClick={() => dispatch(incrementQuant({ id: product.id }))}
               className="text-gray-100 font-medium rounded-sm text-xs h-6 w-6 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
             >
-              +
+              ➕
             </button>
           </span>
         ) : (
