@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <div className="text-center mt-14 mb-4">
       <p className="text-sm">
-        made with <span className="text-red-500">❤</span> in React with Redux
+        made with <span className="text-red-500">❤</span> in React and Redux
         Toolkit
       </p>
       <p className="text-xs">
