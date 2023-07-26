@@ -12,6 +12,7 @@ import PrimaryButton from "./shared/PrimaryButton";
 const Product = ({ product }) => {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
+  const { offers } = useSelector((state) => state.offer);
 
   const productsInCart = {};
   cartItems.forEach((item) => {
@@ -31,12 +32,14 @@ const Product = ({ product }) => {
         <img
           src={product.image}
           alt="product"
-          className="w-10 me-2 rounded-lg"
+          className="w-10 h-10 me-2 rounded-lg"
         />
         <span>
           <h2 className="font-medium">{product.name}</h2>
-          {product.offer && (
-            <h4 className="text-xs text-red-500 ">{product.offer}</h4>
+          {(product.offer || product.offer_id) && (
+            <h4 className="text-xs text-red-500 ">
+              {product.offer ? product.offer : offers[product.offer_id].offer}
+            </h4>
           )}
         </span>
       </div>

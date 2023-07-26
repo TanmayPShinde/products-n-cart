@@ -29,12 +29,27 @@ export const check_for_offers = (item, itemPrice, isSoupPresent) => {
       // Bread
       if (isSoupPresent) saving = itemPrice / 2;
       break;
-    case 5:
-      saving = itemPrice / 3;
-      break;
+    // case 5:
+    //   // Butter
+    //   saving = itemPrice / 3;
+    //   break;
     default:
       saving = 0;
       break;
+  }
+  const offer_id = item.offer_id;
+  if (offer_id) {
+    switch (offer_id) {
+      case "1":
+        saving = itemPrice / 3;
+        break;
+      case "2":
+        saving = itemPrice / 2;
+        break;
+      default:
+        saving = 0;
+        break;
+    }
   }
   return saving;
 };
