@@ -1,8 +1,7 @@
 
 Objective: 
 
-Create  a React and Redux application (bootstrap from create-react-app
-or any other template)
+Create  a React and Redux application 
 
 Task
 
