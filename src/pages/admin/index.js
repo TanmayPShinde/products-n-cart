@@ -25,7 +25,7 @@ const Admin = () => {
     setOffer("");
   };
   return (
-    <div className="mt-5 p-3 max-w-lg mx-auto bg-white rounded-md drop-shadow-lg">
+    <div className="mt-20 p-3 max-w-lg mx-auto bg-white rounded-md drop-shadow-lg">
       <h1 className="text-2xl font-semibold ">Add New Product</h1>
       <hr className="h-px mt-2 mb-3 bg-orange-600 border-2 dark:bg-gray-700" />
       <form onSubmit={handleSubmit} autoComplete="off">

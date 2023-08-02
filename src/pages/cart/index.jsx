@@ -59,7 +59,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="mt-5 p-3 max-w-lg mx-auto bg-white rounded-md drop-shadow-lg">
+      <div className="mt-20 p-3 max-w-lg mx-auto bg-white rounded-md drop-shadow-lg">
         <div className="flex justify-between">
           <h1 className="text-2xl font-semibold ">Basket</h1>
           <Link to="/">

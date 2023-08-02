@@ -5,7 +5,7 @@ const Navbar = () => {
   const { cartItems } = useSelector((state) => state.cart);
 
   return (
-    <nav className="bg-gray-700">
+    <nav className="bg-gray-700 fixed top-0 w-full z-10 shadow-xl">
       <div className="mx-4 max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-14 items-center justify-between">
           <Link to="/">
