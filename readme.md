@@ -1,16 +1,7 @@
-Remaining Things:
-
-
-    1. Firebase Setup and Saving To Firestore  -- done ✅
-    2. Home page Products Layout styling  -- done ✅
-    3. Suggestion to add bread when only cheese is added  -- done ✅
-
-
 
 Objective: 
 
-Create  a React and Redux application (bootstrap from create-react-app
-or any other template)
+Create  a React and Redux application 
 
 Task
 
