@@ -1,25 +1,14 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
-import {
-  addToCart,
-  incrementQuant,
-  decrementQuant,
-  removeFromCart,
-} from "../features/cartSlice";
+import { addToCart, removeFromCart } from "../features/cartSlice";
 import PrimaryButton from "./shared/PrimaryButton";
+import QuantityCounter from "./shared/QuantityCounter";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const { cartItems } = useSelector((state) => state.cart);
   const { offers } = useSelector((state) => state.offer);
-
-  const productsInCart = {};
-  cartItems.forEach((item) => {
-    productsInCart[item.id] = item.quantity;
-  });
-
-  console.log(productsInCart);
+  const { cartItems } = useSelector((state) => state.cart);
 
   const addProduct = (product) => {
     let item = { ...product, quantity: 1 };
@@ -45,7 +34,7 @@ const Product = ({ product }) => {
       </div>
       <div className="me-2">
         <span className="me-4">₹ {product.price}</span>
-        {product.id in productsInCart ? (
+        {cartItems.find((item) => item.id === product.id) ? (
           <span>
             <button
               onClick={() => dispatch(removeFromCart({ id: product.id }))}
@@ -53,23 +42,7 @@ const Product = ({ product }) => {
             >
               ❌
             </button>
-            <PrimaryButton
-              onClickHandler={() =>
-                dispatch(decrementQuant({ id: product.id }))
-              }
-              sx="text-xs h-6 w-6"
-              text="➖"
-            />
-            <div className="bg-gray-200 border-1 !h-6 w-8 px-2 inline-flex items-center justify-center text-sm font-medium">
-              {productsInCart[product.id]}
-            </div>
-            <PrimaryButton
-              onClickHandler={() =>
-                dispatch(incrementQuant({ id: product.id }))
-              }
-              sx="text-xs h-6 w-6"
-              text="➕"
-            />
+            <QuantityCounter id={product.id} />
           </span>
         ) : (
           <PrimaryButton

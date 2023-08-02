@@ -6,6 +6,7 @@ import {
   incrementQuant,
   removeFromCart,
 } from "../features/cartSlice";
+import QuantityCounter from "./shared/QuantityCounter";
 
 const CartItem = ({ item, itemsPricing, isSoupPresent, isBreadPresent }) => {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ const CartItem = ({ item, itemsPricing, isSoupPresent, isBreadPresent }) => {
           >
             ❌
           </button>
-          <button
+          {/* <button
             onClick={() => dispatch(decrementQuant({ id: item.id }))}
             className="text-gray-100 font-medium rounded-sm h-6 w-6 text-xs bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
           >
@@ -72,7 +73,8 @@ const CartItem = ({ item, itemsPricing, isSoupPresent, isBreadPresent }) => {
             className="text-gray-100 font-medium rounded-sm text-xs h-6 w-6 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
           >
             ➕
-          </button>
+          </button> */}
+          <QuantityCounter id={item.id} />
         </span>
         <p className="text-sm text-gray-600 mt-1">
           Item price ₹ {item.price}*{item.quantity} = ₹{" "}
