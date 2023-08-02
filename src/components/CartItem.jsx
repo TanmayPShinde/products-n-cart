@@ -1,11 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  addToCart,
-  decrementQuant,
-  incrementQuant,
-  removeFromCart,
-} from "../features/cartSlice";
+import { addToCart, removeFromCart } from "../features/cartSlice";
 import QuantityCounter from "./shared/QuantityCounter";
 
 const CartItem = ({ item, itemsPricing, isSoupPresent, isBreadPresent }) => {
