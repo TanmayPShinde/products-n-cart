@@ -1,3 +1,12 @@
+## Tanmay's Product Cart
+React and Redux Toolkit Cart app - Add products in Cart, calculate bill and Apply Offers (good learning resource for redux toolkit)
+
+### Features
+Features:
+1. Used **Redux Toolkit** having a different slices for products and cart
+2. Used **Tailwind CSS** and hence didn't write even a single line of custom CSS
+3. Coding Good Practices and Folder Structure was used
+4. Timely Commits and Good Commit messages
 
 Objective: 
 
